@@ -34,14 +34,16 @@ s consists of English letters, digits, symbols and spaces.
 
 func main() {
 	// test case
-	println(solution("abcabcbb"))      // 3
-	println(solution("bbbbb"))         // 1
-	println(solution("pwwkew"))        // 3
-	println(solution(" "))             // 1
-	println(solution("au"))            // 2
-	println(solution("dvdf"))          // 3
-	println(solution("dvoikdfgzx"))    // 9
-	println(solution("dvoikddfgzxop")) // 7
+	println(solution("abcabcbb"))         // 3
+	println(solution("bbbbb"))            // 1
+	println(solution("pwwkew"))           // 3
+	println(solution(" "))                // 1
+	println(solution("au"))               // 2
+	println(solution("dvdf"))             // 3
+	println(solution("dvoikdfgzx"))       // 9
+	println(solution("dvoikddfgzxop"))    // 7
+	println(solution("dvodioutyjsdoiyu")) // 8
+	println(solution("abcdefgbas"))       // 8
 }
 
 func solution(s string) int {

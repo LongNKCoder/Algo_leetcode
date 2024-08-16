@@ -6,38 +6,41 @@ import (
 )
 
 /*
-You are given two integer arrays, users and accounts,
-where users[i] represents the ID of a user and accounts[i] represents the account ID associated with the user at index i.
-It is possible for users to have multiple accounts, and similarly, multiple users can share the same account ID.
-Your task is to write a function that identifies all unique users who share all same accounts ID with another user.
-The function should return a list of these users' IDs without duplicates.
+You have two lists of numbers: users and accounts.
+Each users[i] is the ID of a user, and accounts[i] is the ID of an account that user has.
+A user can have multiple accounts, and an account can be shared by multiple users.
+Your goal is to write a function to find all the users who have the exact same set of accounts as at least one other user.
+The function should return a list of the IDs of these users.
 
-Input:
-users = [1, 2, 3, 4, 2, 5, 1]
-accounts = [1, 1, 2, 2, 3, 4, 3]
+Example 1:
 
-Output:
-[1, 2, 3, 4]
+users 	 = 	[1, 2, 3, 4, 2, 5, 1]
 
-Explanation:
-Users 1 and 2 share account 1, 3.
-Users 3 and 4 share account 2.
+accounts = 	[1, 1, 2, 2, 3, 4, 3]
 
-Input:
-users = [1, 2, 3, 4, 2, 1, 1]
-accounts = [1, 1, 2, 2, 3, 4, 3]
-
-Output:
-[3, 4]
+Output: [1, 2, 3, 4]
 
 Explanation:
-Users 1 and 2 share account 1, 3. but 1 has 4 so it not the same.
-Users 3 and 4 share account 2.
+
+Users 1 and 2 both have accounts 1 and 3.
+Users 3 and 4 both have account 2.
+Example 2:
+
+users 	 = [1, 2, 3, 4, 2, 1, 1]
+
+accounts = [1, 1, 2, 2, 3, 4, 3]
+
+Output: [3, 4]
+
+Explanation:
+
+Users 1 and 2 both have accounts 1 and 3, but user 1 also has account 4, so they don't have the exact same set of accounts.
+Users 3 and 4 both have account 2.
 */
 
 func main() {
-	users := []int{1, 2, 3, 4, 2, 5, 1}
-	accounts := []int{1, 1, 2, 2, 3, 4, 3}
+	users := []int{1, 2, 3, 4, 2, 5, 1, 2, 1}
+	accounts := []int{3, 1, 2, 2, 11, 4, 1, 3, 11}
 	fmt.Println(findUsersWithIdenticalAccounts(users, accounts)) // [1 2 3 4]
 	users = []int{1, 2, 3, 4, 2, 1, 1}
 	accounts = []int{1, 1, 2, 2, 3, 4, 3}
